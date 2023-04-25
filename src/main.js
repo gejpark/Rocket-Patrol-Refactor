@@ -1,3 +1,11 @@
+//NAME: Gene Park
+//TITLE: Rocket Reloaded 2: The Quickening
+//TIME TO COMPLETE:
+//MODS CHOSEN:
+//  Allow the player to control the Rocket after it's fired (5)
+//
+//CITATIONS:
+
 let config = {
     type: Phaser.AUTO, //Phaser.CANVAS => webgl isn't pixel perfect when rendering for some reason
     width: 640,
