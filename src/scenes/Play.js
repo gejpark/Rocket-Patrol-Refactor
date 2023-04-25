@@ -74,6 +74,11 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+
+        //Add fireUI
+        scoreConfig.align = 'center';
+        this.fireUI = this.add.text(game.config.width/2, borderUISize + borderPadding*2, "FIRE", scoreConfig);
+        this.fireUI.alpha = 0;
     }
 
     update() {
@@ -111,6 +116,12 @@ class Play extends Phaser.Scene {
             this.p1Rocket.reset();
             // this.ship01.reset();
             this.shipExplode(this.ship01);
+        }
+
+        if(this.p1Rocket.isFiring) {
+            this.fireUI.alpha = 1;
+        } else {
+            this.fireUI.alpha = 0;
         }
     }
 

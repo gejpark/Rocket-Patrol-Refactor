@@ -2,8 +2,10 @@
 //TITLE: Rocket Reloaded 2: The Quickening
 //TIME TO COMPLETE:
 //MODS CHOSEN:
-//  Allow the player to control the Rocket after it's fired (5)
-//
+//  - Allow the player to control the Rocket after it's fired (5)
+//  Was very simple, just removed if(!isFiring) check.
+//  - Implement the 'FIRE' UI text from the original game (5)
+//  Added new text component. Only make visible alpha when isFiring.
 //CITATIONS:
 
 let config = {
