@@ -31,6 +31,28 @@ class Play extends Phaser.Scene {
         this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'spaceship', 0, 20).setOrigin(0, 0);
         this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'spaceship', 0, 10).setOrigin(0, 0);
 
+        //randomize direction at start
+        let directionRandomizer = () => { if (Math.random() > 0.5) { 
+            return -1;
+        } else {
+            return 1;
+        }}
+        // should the sprite be flipped (based on direction)
+        let flipSprite = (val) => {
+            if (val > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        //set direction and whether or not sprite is flipped
+        this.ship01.direction = directionRandomizer();          //set direction
+        this.ship01.flipX = flipSprite(this.ship01.direction);  //flip sprite in correct direction
+        this.ship02.direction = directionRandomizer();
+        this.ship02.flipX = flipSprite(this.ship02.direction);
+        this.ship03.direction = directionRandomizer();
+        this.ship03.flipX = flipSprite(this.ship03.direction);
+
         // define keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);

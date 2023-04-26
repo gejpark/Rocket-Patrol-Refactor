@@ -12,13 +12,20 @@
 //      Adjusted some textboxes.
 //  - Implement the speed increase that happens after 30 seconds in the original game (5)
 //      Added timer that increments moveSpeed after 30 seconds.
+//  - Randomize each spaceship's movement direction at the start of each play (5)
+//      Various changes to Spaceship.js update (a "direction" argument was added.) Adjusted Play.js to account for different directions (sprite flipping, etc.)
 //TOTAL POINT VALUE: 
 //CITATIONS:
 //  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)
 //  - Phaser 3 Audio Notes (https://rexrainbow.github.io/phaser3-rex-notes/docs/site/audio/)
+//  - Random Javascript (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
 
 //notes:
 // for high score that persists across screens, just get the highest score value and attach it to the UI (above border, where FIRE is)
+// the following should be done together:
+//                                      - Create a new scrolling tile sprite for the background (5)
+//                                      - Implement parallax scrolling for the background (10)
 
 let config = {
     type: Phaser.AUTO, //Phaser.CANVAS => webgl isn't pixel perfect when rendering for some reason
