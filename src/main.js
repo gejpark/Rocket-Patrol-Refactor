@@ -10,7 +10,8 @@
 //      Found royalty free music, added it to game.
 //  - Track a high score that persists across scenes and display it in the UI (5)
 //      Adjusted some textboxes.
-
+//  - Implement the speed increase that happens after 30 seconds in the original game (5)
+//      Added timer that increments moveSpeed after 30 seconds.
 //TOTAL POINT VALUE: 
 //CITATIONS:
 //  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)

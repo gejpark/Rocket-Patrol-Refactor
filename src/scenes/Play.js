@@ -95,6 +95,14 @@ class Play extends Phaser.Scene {
             this.playMusic.setLoop(true); //set it to loop
         }
         this.playMusic.play(); //play the music
+
+        //speed increase spaceships after 30-second delay
+        this.speedUpClock = this.time.delayedCall(30000, () => {
+            // console.log('Speed increase activated!');
+            this.ship01.moveSpeed += 2;
+            this.ship02.moveSpeed += 2;
+            this.ship03.moveSpeed += 2;
+        })
     }
 
     update() {
