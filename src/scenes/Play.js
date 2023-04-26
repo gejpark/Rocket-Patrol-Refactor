@@ -80,6 +80,14 @@ class Play extends Phaser.Scene {
         this.fireUI = this.add.text(game.config.width/2, borderUISize + borderPadding*2, "FIRE", scoreConfig);
         this.fireUI.alpha = 0;
 
+        //Add high score to UI
+        if (this.highScore == null) {
+            this.highScore = 0;
+        }
+        scoreConfig.fontSize = '14px';
+        this.highScoreUI = this.add.text(game.config.width/4, borderUISize + borderPadding*2, `HIGH SCORE: ${this.highScore}`, scoreConfig);
+        scoreConfig.fontSize = '28px';
+
         //
         if (this.playMusic == null) { // if no such instance exists.
             // console.log('Music instance created')
@@ -92,10 +100,16 @@ class Play extends Phaser.Scene {
     update() {
         // check key input for restart
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
+            if(this.p1Score > this.highScore) {
+                this.highScore = this.p1Score;
+            }
             this.playMusic.stop(); //stop music when exit to menu
             this.scene.restart();
         }
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+            if(this.p1Score > this.highScore) {
+                this.highScore = this.p1Score;
+            }
             this.playMusic.stop(); //stop music when exit to menu
             this.scene.start("menuScene");
         }

@@ -8,6 +8,9 @@
 //      Added new text component. Only make visible alpha when isFiring.
 //  - Add your own (copyright-free) background music to the Play scene (please be mindful of the volume) (5)
 //      Found royalty free music, added it to game.
+//  - Track a high score that persists across scenes and display it in the UI (5)
+//      Adjusted some textboxes.
+
 //TOTAL POINT VALUE: 
 //CITATIONS:
 //  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)
