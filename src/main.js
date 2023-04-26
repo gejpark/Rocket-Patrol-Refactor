@@ -3,11 +3,15 @@
 //TIME TO COMPLETE:
 //MODS CHOSEN:
 //  - Allow the player to control the Rocket after it's fired (5)
-//  Was very simple, just removed if(!isFiring) check.
+//      Was very simple, just removed if(!isFiring) check.
 //  - Implement the 'FIRE' UI text from the original game (5)
-//  Added new text component. Only make visible alpha when isFiring.
-//  TOTAL POINT VALUE: 
+//      Added new text component. Only make visible alpha when isFiring.
+//  - Add your own (copyright-free) background music to the Play scene (please be mindful of the volume) (5)
+//      Found royalty free music, added it to game.
+//TOTAL POINT VALUE: 
 //CITATIONS:
+//  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)
+//  - Phaser 3 Audio Notes (https://rexrainbow.github.io/phaser3-rex-notes/docs/site/audio/)
 
 //notes:
 // for high score that persists across screens, just get the highest score value and attach it to the UI (above border, where FIRE is)

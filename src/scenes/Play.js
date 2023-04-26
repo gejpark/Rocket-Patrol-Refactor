@@ -79,14 +79,24 @@ class Play extends Phaser.Scene {
         scoreConfig.align = 'center';
         this.fireUI = this.add.text(game.config.width/2, borderUISize + borderPadding*2, "FIRE", scoreConfig);
         this.fireUI.alpha = 0;
+
+        //
+        if (this.playMusic == null) { // if no such instance exists.
+            // console.log('Music instance created')
+            this.playMusic = this.sound.add('sfx_play'); //create music/sound instance.
+            this.playMusic.setLoop(true); //set it to loop
+        }
+        this.playMusic.play(); //play the music
     }
 
     update() {
         // check key input for restart
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
+            this.playMusic.stop(); //stop music when exit to menu
             this.scene.restart();
         }
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+            this.playMusic.stop(); //stop music when exit to menu
             this.scene.start("menuScene");
         }
 
