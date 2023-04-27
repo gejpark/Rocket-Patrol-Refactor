@@ -108,9 +108,13 @@ class Play extends Phaser.Scene {
         }
         scoreConfig.fontSize = '14px';
         this.highScoreUI = this.add.text(game.config.width/4, borderUISize + borderPadding*2, `HIGH SCORE: ${this.highScore}`, scoreConfig);
-        scoreConfig.fontSize = '28px';
+        
+        //Add timer to UI
+        this.timeRemainUI = this.add.text(game.config.width/4, borderUISize + borderPadding*2 + this.highScoreUI.height, `TIME: ${Math.ceil((game.settings.gameTimer - this.clock.elapsed)/1000)}`, scoreConfig);
 
-        //
+        scoreConfig.fontSize = '28px'; //return font size back to normal
+
+        //music
         if (this.playMusic == null) { // if no such instance exists.
             // console.log('Music instance created')
             this.playMusic = this.sound.add('sfx_play'); //create music/sound instance.
@@ -128,6 +132,10 @@ class Play extends Phaser.Scene {
     }
 
     update() {
+        //update countdown timer
+        // console.log(Math.ceil((game.settings.gameTimer - this.clock.elapsed)/1000));
+        this.timeRemainUI.text = `TIME: ${Math.ceil((game.settings.gameTimer - this.clock.elapsed)/1000)}`;
+
         // check key input for restart
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
             if(this.p1Score > this.highScore) {

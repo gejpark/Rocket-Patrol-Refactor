@@ -14,11 +14,14 @@
 //      Added timer that increments moveSpeed after 30 seconds.
 //  - Randomize each spaceship's movement direction at the start of each play (5)
 //      Various changes to Spaceship.js update (a "direction" argument was added.) Adjusted Play.js to account for different directions (sprite flipping, etc.)
+//  - Display the time remaining (in seconds) on the screen (10)
+//      Added time by using elapsed time on 'this.clock' or the time.delayedCall instance. Also added a UI element to display time.
 //TOTAL POINT VALUE: 
 //CITATIONS:
 //  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)
 //  - Phaser 3 Audio Notes (https://rexrainbow.github.io/phaser3-rex-notes/docs/site/audio/)
 //  - Random Javascript (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+//  - elapsed member on time object (https://newdocs.phaser.io/docs/3.55.2/Phaser.Time.TimerEvent#elapsed)
 
 
 //notes:
