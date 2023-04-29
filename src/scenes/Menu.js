@@ -47,9 +47,7 @@ class Menu extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         
-        mousePOINTER = this.input.activePointer;
-        // mousePOINTER1 = this.input.events;
-        // mousePOINTER = this.input.Pointer;
+        mousePOINTER = this.input.activePointer; //set mouse pointer
     }
 
     update() {

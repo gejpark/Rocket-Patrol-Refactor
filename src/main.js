@@ -24,6 +24,8 @@
 //      The 4 new tilesprites scroll in the background at different directions/speeds and overlap to create a parallax scrolling effect.
 //  - Implement mouse control for player movement and mouse click to fire (15)
 //      Click primary button to fire, move left and right with mouse to control. If left or right key is used then mouse is disabled and vice versa.
+//  - Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (15)
+//      Phaser's example repository was incredibly helpful in getting explosions to work.
 //TOTAL POINT VALUE: 5 + 5 + 5 + 5 + 5 + 5 + 10 + 10 + 5 + 10 + 15
 //CITATIONS:
 //  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)
@@ -34,7 +36,7 @@
 //  - Color palette (https://lospec.com/palette-list/nyx8)
 //  - TileSprite documentation (https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.TileSprite.html)
 //  - Phaser 3 mouse pointer documentation (https://newdocs.phaser.io/docs/3.60.0/Phaser.Input.Pointer) + example (https://github.com/photonstorm/phaser3-examples/blob/master/public/src/input/pointer/pointer%20debug.js)
-
+//  - Particles help (https://labs.phaser.io/index.html?dir=game%20objects/particle%20emitter/&q=) + (https://labs.phaser.io/view.html?src=src/game%20objects/particle%20emitter/emit%20at%20pointer.js)
 //notes:
 // for high score that persists across screens, just get the highest score value and attach it to the UI (above border, where FIRE is)
 // the following should be done together:
@@ -49,7 +51,7 @@ let config = {
 }
 let game = new Phaser.Game(config);
 // reserve keyboard vars
-let keyF, keyR, keyLEFT, keyRIGHT, mousePOINTER, mouseControl=false;
+let keyF, keyR, keyLEFT, keyRIGHT, mousePOINTER, mouseControl=false, emitter;
 // Set UI sizes
 let borderUISize = game.config.height / 15;
 let borderPadding = borderUISize / 3;

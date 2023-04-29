@@ -14,6 +14,9 @@ class Play extends Phaser.Scene {
         this.load.image('background4', './assets/background4.png');
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight:32, startFrame: 0, endFrame: 9});
+
+        
+        this.load.image('explosion_particle1', './assets/explosion_particle1.png');//test
     }
 
     create() {
@@ -136,7 +139,17 @@ class Play extends Phaser.Scene {
             this.ship01.moveSpeed += 2;
             this.ship02.moveSpeed += 2;
             this.ship03.moveSpeed += 2;
-        })
+        });
+
+        //create particles
+        emitter = this.add.particles(0, 0, 'explosion_particle1', {
+            lifespan: 4000,
+            speed: { min: 200, max: 350 },
+            scale: { start: 0.2, end: 0 },
+            rotate: { start: 0, end: 720 },
+            gravityY: 300,
+            emitting: false
+        });
     }
 
     update() {
@@ -217,8 +230,16 @@ class Play extends Phaser.Scene {
         ship.alpha = 0;
         // create explosion sprite at ship's position
         let boom = this.add.sprite(ship.x, ship.y, 'explosion').setOrigin(0, 0);
+        //test
+        // emitter.x = ship.x;
+        // emitter.y = ship.y;
+        // emitter.start(1);
+        
+        // emitter.emitParticleAt(0, 0, 4 );
+        emitter.emitParticleAt(ship.x, ship.y, 4 );
+        
         boom.anims.play('explode');             // play explode animation
-        boom.on('animationcomplete', () => {    // callback after anim completes
+        boom.on('animationcomplete', () => {    // callback after anim completes            
             ship.reset();                       // reset ship position
             ship.alpha = 1;                     // make ship visible again
             boom.destroy();                     // remove explosion sprite
