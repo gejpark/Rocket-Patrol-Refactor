@@ -22,7 +22,9 @@
 //      Added 4 different tilesprites
 //  - Implement parallax scrolling for the background (10)
 //      The 4 new tilesprites scroll in the background at different directions/speeds and overlap to create a parallax scrolling effect.
-//TOTAL POINT VALUE: 5 + 5 + 5 + 5 + 5 + 5 + 10 + 10 + 5 + 10
+//  - Implement mouse control for player movement and mouse click to fire (15)
+//      Click primary button to fire, move left and right with mouse to control. If left or right key is used then mouse is disabled and vice versa.
+//TOTAL POINT VALUE: 5 + 5 + 5 + 5 + 5 + 5 + 10 + 10 + 5 + 10 + 15
 //CITATIONS:
 //  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)
 //  - Phaser 3 Audio Notes (https://rexrainbow.github.io/phaser3-rex-notes/docs/site/audio/)
@@ -31,6 +33,7 @@
 //  - 'sfxr.me' used to make explosion sounds (https://sfxr.me/)
 //  - Color palette (https://lospec.com/palette-list/nyx8)
 //  - TileSprite documentation (https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.TileSprite.html)
+//  - Phaser 3 mouse pointer documentation (https://newdocs.phaser.io/docs/3.60.0/Phaser.Input.Pointer) + example (https://github.com/photonstorm/phaser3-examples/blob/master/public/src/input/pointer/pointer%20debug.js)
 
 //notes:
 // for high score that persists across screens, just get the highest score value and attach it to the UI (above border, where FIRE is)
@@ -46,7 +49,7 @@ let config = {
 }
 let game = new Phaser.Game(config);
 // reserve keyboard vars
-let keyF, keyR, keyLEFT, keyRIGHT;
+let keyF, keyR, keyLEFT, keyRIGHT, mousePOINTER, mouseControl=false;
 // Set UI sizes
 let borderUISize = game.config.height / 15;
 let borderPadding = borderUISize / 3;
