@@ -26,7 +26,7 @@
 //      Click primary button to fire, move left and right with mouse to control. If left or right key is used then mouse is disabled and vice versa.
 //  - Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (15)
 //      Phaser's example repository was incredibly helpful in getting explosions to work.
-//TOTAL POINT VALUE: 5 + 5 + 5 + 5 + 5 + 5 + 10 + 10 + 5 + 10 + 15
+//TOTAL POINT VALUE: 5 + 5 + 5 + 5 + 5 + 5 + 10 + 10 + 5 + 10 + 15 + 15
 //CITATIONS:
 //  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)
 //  - Phaser 3 Audio Notes (https://rexrainbow.github.io/phaser3-rex-notes/docs/site/audio/)
