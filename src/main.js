@@ -18,13 +18,19 @@
 //      Added time by using elapsed time on 'this.clock' or the time.delayedCall instance. Also added a UI element to display time.
 //  - Create 4 new explosion sound effects and randomize which one plays on impact (10)
 //      Added randomizer function, and 4 new sounds that it chooses randomly
-//TOTAL POINT VALUE: 
+//  - Create a new scrolling tile sprite for the background (5)
+//      Added 4 different tilesprites
+//  - Implement parallax scrolling for the background (10)
+//      The 4 new tilesprites scroll in the background at different directions/speeds and overlap to create a parallax scrolling effect.
+//TOTAL POINT VALUE: 5 + 5 + 5 + 5 + 5 + 5 + 10 + 10 + 5 + 10
 //CITATIONS:
 //  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)
 //  - Phaser 3 Audio Notes (https://rexrainbow.github.io/phaser3-rex-notes/docs/site/audio/)
 //  - Random Javascript (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 //  - elapsed member on time object (https://newdocs.phaser.io/docs/3.55.2/Phaser.Time.TimerEvent#elapsed)
 //  - 'sfxr.me' used to make explosion sounds (https://sfxr.me/)
+//  - Color palette (https://lospec.com/palette-list/nyx8)
+//  - TileSprite documentation (https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.TileSprite.html)
 
 //notes:
 // for high score that persists across screens, just get the highest score value and attach it to the UI (above border, where FIRE is)

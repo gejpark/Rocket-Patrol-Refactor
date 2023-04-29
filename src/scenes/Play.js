@@ -7,14 +7,22 @@ class Play extends Phaser.Scene {
         // Load images/tile sprites
         this.load.image('rocket', './assets/rocket.png');
         this.load.image('spaceship', './assets/spaceship.png');
-        this.load.image('starfield', './assets/starfield.png');
+        // this.load.image('starfield', './assets/starfield.png');
+        this.load.image('background1', './assets/background1.png');
+        this.load.image('background2', './assets/background2.png');
+        this.load.image('background3', './assets/background3.png');
+        this.load.image('background4', './assets/background4.png');
         // load spritesheet
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight:32, startFrame: 0, endFrame: 9});
     }
 
     create() {
         // place tile sprite
-        this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
+        // this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);          //whichever sprite is drawn first is on the lowest depth, ever subsequent sprite draws over it.
+        this.background1 = this.add.tileSprite(0, 100, 640, 480, 'background1').setOrigin(0, 0);    //All background sprites are used for parallax scrolling effect.
+        this.background2 = this.add.tileSprite(0, 227, 640, 480, 'background2').setOrigin(0, 0);
+        this.background3 = this.add.tileSprite(0, 227, 640, 480, 'background3').setOrigin(0, 0);
+        this.background4 = this.add.tileSprite(0, 227, 640, 480, 'background4').setOrigin(0, 0);
         // green UI background
         this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x00FF00).setOrigin(0, 0);
         // white borders
@@ -152,7 +160,12 @@ class Play extends Phaser.Scene {
             this.scene.start("menuScene");
         }
 
-        this.starfield.tilePositionX -= 4;  // update tile sprite
+        //Move tile sprite
+        // this.starfield.tilePositionX -= 4;          // update tile sprite
+        this.background1.tilePositionX -= 2;        //scroll tile sprites at different speeds + directions for parallax scrolling effect.
+        this.background2.tilePositionX += 0.5;
+        this.background3.tilePositionX -= 0.2;
+        this.background4.tilePositionX -= 0.1;
         if(!this.gameOver) {
             this.p1Rocket.update();             // update p1
             this.ship01.update();               // update spaceships (x3)
