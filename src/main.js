@@ -1,6 +1,6 @@
 //NAME: Gene Park
-//TITLE: Rocket Reloaded 2: The Quickening
-//TIME TO COMPLETE:
+//MOD TITLE: ROCKET PATROL 2: THE QUICKENING
+//TIME TO COMPLETE: 12 HOURS
 //MODS CHOSEN:
 //  - Allow the player to control the Rocket after it's fired (5)
 //      Was very simple, just removed if(!isFiring) check.
@@ -26,7 +26,9 @@
 //      Click primary button to fire, move left and right with mouse to control. If left or right key is used then mouse is disabled and vice versa.
 //  - Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (15)
 //      Phaser's example repository was incredibly helpful in getting explosions to work.
-//TOTAL POINT VALUE: 5 + 5 + 5 + 5 + 5 + 5 + 10 + 10 + 5 + 10 + 15 + 15
+//  - Create a new title screen (e.g., new artwork, typography, layout) (10)
+//      Created new title art, changed text style and moved it around. Changed color in play scene to match palette (for consistency)
+//  TOTAL POINT VALUE = 105 = 5 + 5 + 5 + 5 + 5 + 5 + 10 + 10 + 5 + 10 + 15 + 15 + 10
 //CITATIONS:
 //  - Music by Dream-Protocol from Pixabay (https://pixabay.com/music/video-games-space-invaders-classic-arcade-game-116826/)
 //  - Phaser 3 Audio Notes (https://rexrainbow.github.io/phaser3-rex-notes/docs/site/audio/)
@@ -37,11 +39,7 @@
 //  - TileSprite documentation (https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.TileSprite.html)
 //  - Phaser 3 mouse pointer documentation (https://newdocs.phaser.io/docs/3.60.0/Phaser.Input.Pointer) + example (https://github.com/photonstorm/phaser3-examples/blob/master/public/src/input/pointer/pointer%20debug.js)
 //  - Particles help (https://labs.phaser.io/index.html?dir=game%20objects/particle%20emitter/&q=) + (https://labs.phaser.io/view.html?src=src/game%20objects/particle%20emitter/emit%20at%20pointer.js)
-//notes:
-// for high score that persists across screens, just get the highest score value and attach it to the UI (above border, where FIRE is)
-// the following should be done together:
-//                                      - Create a new scrolling tile sprite for the background (5)
-//                                      - Implement parallax scrolling for the background (10)
+//  - NYX8 Palette used (https://lospec.com/palette-list/nyx8)
 
 let config = {
     type: Phaser.AUTO, //Phaser.CANVAS => webgl isn't pixel perfect when rendering for some reason
