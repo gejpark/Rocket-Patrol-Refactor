@@ -26,13 +26,13 @@ class Play extends Phaser.Scene {
         this.background2 = this.add.tileSprite(0, 227, 640, 480, 'background2').setOrigin(0, 0);
         this.background3 = this.add.tileSprite(0, 227, 640, 480, 'background3').setOrigin(0, 0);
         this.background4 = this.add.tileSprite(0, 227, 640, 480, 'background4').setOrigin(0, 0);
-        // green UI background
-        this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x00FF00).setOrigin(0, 0);
-        // white borders
-        this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(0, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
+        // purple UI background
+        this.add.rectangle(0, 0, game.config.width, borderUISize * 2 + borderUISize + borderPadding, 0x997577).setOrigin(0, 0);
+        // // beige borders
+        // this.add.rectangle(0, 0, game.config.width, borderUISize, 0xc3a38a).setOrigin(0, 0);
+        // this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xc3a38a).setOrigin(0, 0);
+        // this.add.rectangle(0, 0, borderUISize, game.config.height, 0xc3a38a).setOrigin(0, 0);
+        // this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xc3a38a).setOrigin(0, 0);
 
         // add rocket (p1)
         this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5, 0);
@@ -84,10 +84,10 @@ class Play extends Phaser.Scene {
 
         // display score
         let scoreConfig = {
-            fontFamily: 'Courier',
+            fontFamily: 'Trebuchet MS',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
+            backgroundColor: '#816271',
+            color: '#c3a38a',
             align: 'right',
             padding: {
                 top: 5,
@@ -150,6 +150,12 @@ class Play extends Phaser.Scene {
             gravityY: 300,
             emitting: false
         });
+
+        // beige borders (instantiated last, so that it is drawn on top of everything else.)
+        this.add.rectangle(0, 0, game.config.width, borderUISize, 0xc3a38a).setOrigin(0, 0);
+        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xc3a38a).setOrigin(0, 0);
+        this.add.rectangle(0, 0, borderUISize, game.config.height, 0xc3a38a).setOrigin(0, 0);
+        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xc3a38a).setOrigin(0, 0);
     }
 
     update() {
