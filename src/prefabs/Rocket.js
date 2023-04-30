@@ -19,7 +19,7 @@ class Rocket extends Phaser.GameObjects.Sprite {
         if(mousePOINTER.distance > 0) {             //if move with mouse then allow mouse control
             mouseControl = true;
         }
-        if(keyLEFT.isDown || keyRIGHT.isDown) {     //if move with keyboard then disable mouse control
+        if(keyLEFT.isDown || keyRIGHT.isDown || keyF.isDown) {     //if move with keyboard then disable mouse control
             mouseControl = false;
         }
 
