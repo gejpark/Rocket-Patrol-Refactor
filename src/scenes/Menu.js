@@ -45,7 +45,8 @@ class Menu extends Phaser.Scene {
         // menuConfig.backgroundColor = '#00FF00';
         // menuConfig.color = '#000';
         menuConfig.fontSize = '14px';
-        this.add.text(game.config.width*(3/4), game.config.height*(3/4), 'Use ←→ arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width*(3/4), game.config.height*(3/4) - borderUISize - borderPadding, 'Control with mouse and primary to fire', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width*(3/4), game.config.height*(3/4), 'Can also use ←→ arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width*(3/4), game.config.height*(3/4) + borderUISize + borderPadding, 'Press ← for Novice or → for Expert', menuConfig).setOrigin(0.5);
 
         // define keys
